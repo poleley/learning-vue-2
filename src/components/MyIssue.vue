@@ -17,6 +17,9 @@
     <div class="issue-text">
       {{ body }}
     </div>
+    <div class="issue-date">
+      Срок: {{ date }}
+    </div>
   </div>
 </template>
 
@@ -26,7 +29,8 @@ export default {
   props: {
     title: String,
     body: String,
-    completed: Boolean
+    completed: Boolean,
+    date: String
   },
   components: {
 
@@ -65,4 +69,10 @@ export default {
 .issue-text {
   word-wrap: break-word;
 }
+
+.issue-date {
+  margin-top: 1rem;
+  color: #676767;
+}
+
 </style>

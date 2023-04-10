@@ -6,6 +6,7 @@
         :title="issue.title"
         :body="issue.body"
         :completed="issue.completed"
+        :date="issue.date"
         :key="issue.id"
         @remove="$emit('remove', issue)"
         @edit="$emit('start-edit', issue.id)"

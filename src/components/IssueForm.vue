@@ -3,14 +3,21 @@
     <form @submit.prevent>
       <my-input
           v-model="formData.title"
+          type="text"
           placeholder="Заголовок"
-      ></my-input>
+      />
       <div class="textarea-div">
         <my-textarea
             v-model="formData.body"
             placeholder="Дополнительно"
-        ></my-textarea>
+        />
       </div>
+      <my-input
+          v-model="formData.date"
+          type="text"
+          placeholder="Срок выполнения"
+          onfocus="(this.type='date')"
+      />
       <div class="button-div">
         <my-button
             @click="$emit('save', formData)"
@@ -24,16 +31,17 @@
 </template>
 
 <script>
+import MyInput from "./UI/MyInput.vue";
+
 export default {
   name: "issue-form",
+  components: {MyInput},
   props: {
     issue: {
       type: Object
     }
   },
-  methods: {
-
-  },
+  methods: {},
   data() {
     return {
       formData: {
